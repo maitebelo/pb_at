@@ -1,7 +1,7 @@
 package com.appagendamento.appagendamento;
 
 import com.appagendamento.appagendamento.model.domain.Estudante;
-import com.appagendamento.appagendamento.service.EstudanteService;
+import com.appagendamento.appagendamento.model.service.EstudanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 @Order(1)
 @Component
