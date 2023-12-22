@@ -1,0 +1,3 @@
+jose;jose@jose.com;83138100090
+maria;maria@maria.com;78996911097
+alica;alice@alice.com;75216604049
