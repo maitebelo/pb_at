@@ -21,12 +21,11 @@ public class Estudante {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
-
     }
 
     @Override
     public String toString() {
-        return String.format("Id (%d) - Nome (%s) - email (%s) - cpf (%s)", id, nome, email, cpf);
+        return String.format("Id (%d) - Nome (%s) - email (%s) - cpf (%s), - cep (%s)", id, nome, email, cpf, endereco.getCep());
     }
 
     @Id
@@ -37,9 +36,14 @@ public class Estudante {
     private String email;
     private String cpf;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idEndereco")
+    private Endereco endereco;
+
     @JsonIgnore
-    @OneToMany(mappedBy = "estudante")
+    @OneToMany(mappedBy = "estudante", cascade = CascadeType.ALL)
     private List<Sessao> sessoes;
+
 
 }
 

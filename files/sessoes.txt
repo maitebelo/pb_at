@@ -1,1 +1,1 @@
-Primeira sessão do dia;true;jose;jose@jose.com;83138100090;elberth;elberth@elberth.com;15567933088
+Primeira sessão do dia;true;jose;jose@jose.com;83138100090;20010020;elberth;elberth@elberth.com;15567933088

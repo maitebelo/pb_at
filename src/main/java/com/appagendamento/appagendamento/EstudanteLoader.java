@@ -1,6 +1,8 @@
 package com.appagendamento.appagendamento;
 
+import com.appagendamento.appagendamento.model.domain.Endereco;
 import com.appagendamento.appagendamento.model.domain.Estudante;
+import com.appagendamento.appagendamento.model.service.EnderecoService;
 import com.appagendamento.appagendamento.model.service.EstudanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -18,6 +20,9 @@ public class EstudanteLoader implements ApplicationRunner {
     @Autowired
     private EstudanteService estudanteService;
 
+    @Autowired
+    private EnderecoService enderecoService;
+
     public void run (ApplicationArguments args) throws Exception{
 
         FileReader file = new FileReader("files/estudantes.txt");
@@ -29,10 +34,14 @@ public class EstudanteLoader implements ApplicationRunner {
 
         while(linha != null){
             campos = linha.split(";");
+            Endereco endereco = new Endereco(campos[3]);
+            String cep = campos[3];
+
             Estudante estudante = new Estudante();
             estudante.setNome(campos[0]);
             estudante.setEmail(campos[1]);
             estudante.setCpf(campos[2]);
+            estudante.setEndereco(endereco);
 
 
             estudanteService.incluir(estudante);
